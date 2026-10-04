@@ -1,11 +1,18 @@
+from ui.components import load_css, render_navbar, render_footer, card, badge
 import streamlit as st
 import random
 import uuid
 import datetime
+import streamlit as st
+import random
+import uuid
+import datetime
+import time
 from core.gym_bank import GYM_BANK
 from core.gym_checker import check_answer, check_answer_advanced
 from core.xp import save_workout, get_progress, get_topic_mastery
-from ui.components import load_css, render_navbar, render_footer, card, badge
+from core.gym_ai import build_workout
+
 
 load_css()
 render_navbar()
@@ -51,9 +58,10 @@ st.markdown("""
 if "gym_active" not in st.session_state:
     st.session_state.gym_active = False
 
-def start_workout():
+def start_workout(mode="Quick Workout", count=5):
     st.session_state.gym_active = True
-    st.session_state.gym_exercises = random.sample(GYM_BANK, min(5, len(GYM_BANK)))
+    st.session_state.gym_mode = mode
+    st.session_state.gym_exercises = build_workout(mode, count=count)
     st.session_state.gym_idx = 0
     st.session_state.gym_hints = 0
     st.session_state.gym_attempts = 0
@@ -62,6 +70,7 @@ def start_workout():
     st.session_state.gym_score = 0
     st.session_state.gym_results = []
     st.session_state.gym_saved = False
+    st.session_state.gym_start_time = time.time()
     st.rerun()
 
 def submit_answer(answer):
@@ -135,32 +144,44 @@ if not st.session_state.gym_active:
     with c2:
         st.markdown(f"<div class='gym-card' style='padding: 1.5rem; text-align:center;'><h3 style='margin:0; font-family:Fraunces; font-size:2.5rem;'>{streak}</h3><div style='font-size:0.75rem; letter-spacing:0.1em; color:var(--parchment);'>DAY STREAK</div></div>", unsafe_allow_html=True)
     with c3:
-        st.markdown(f"<div class='gym-card' style='padding: 1.5rem; text-align:center;'><h3 style='margin:0; font-family:Fraunces; font-size:2.5rem;'>1</h3><div style='font-size:0.75rem; letter-spacing:0.1em; color:var(--parchment);'>WORKOUTS TODAY</div></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='gym-card' style='padding: 1.5rem; text-align:center;'><h3 style='margin:0; font-family:Fraunces; font-size:2.5rem;'>0</h3><div style='font-size:0.75rem; letter-spacing:0.1em; color:var(--parchment);'>DONE TODAY</div></div>", unsafe_allow_html=True)
         
     st.markdown("### Start a workout")
-    if st.button("Quick Workout (5 mixed exercises)", type="primary"):
-        start_workout()
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.markdown("<div class='gym-card' style='padding:1.5rem; text-align:center;'><h4>Quick</h4><p style='font-size:0.8rem; color:var(--mist);'>5 mixed exercises</p></div>", unsafe_allow_html=True)
+        if st.button("Start Quick", type="primary", use_container_width=True, key="btn_quick"): start_workout("Quick Workout", 5)
+    with col2:
+        st.markdown("<div class='gym-card' style='padding:1.5rem; text-align:center;'><h4>Daily</h4><p style='font-size:0.8rem; color:var(--mist);'>Today's 3 challenges</p></div>", unsafe_allow_html=True)
+        if st.button("Start Daily", type="primary", use_container_width=True, key="btn_daily"): start_workout("Daily Workout", 3)
+    with col3:
+        st.markdown("<div class='gym-card' style='padding:1.5rem; text-align:center;'><h4>Weak-Spot</h4><p style='font-size:0.8rem; color:var(--mist);'>Train what you miss</p></div>", unsafe_allow_html=True)
+        if st.button("Start Targeted", type="primary", use_container_width=True, key="btn_weak"): start_workout("Weak-Spot Workout", 5)
+    with col4:
+        st.markdown("<div class='gym-card' style='padding:1.5rem; text-align:center;'><h4>Review</h4><p style='font-size:0.8rem; color:var(--mist);'>Redo mistakes</p></div>", unsafe_allow_html=True)
+        if st.button("Review Mistakes", type="primary", use_container_width=True, key="btn_rev"): start_workout("Review Mistakes", 5)
         
-    st.markdown("### Topic Mastery")
+    st.markdown("<br>### Topic Mastery", unsafe_allow_html=True)
     mastery = get_topic_mastery()
     if mastery:
         for t, m in mastery.items():
             st.markdown(f"**{t}** {m}%")
             st.progress(m / 100)
     else:
-        st.info("Complete some workouts to see your topic mastery!")
-        
+        st.info("Do a few Solve sessions first, and I'll learn where to train you.")
 else:
     if st.session_state.gym_idx >= len(st.session_state.gym_exercises):
         # Save workout logic
         if not getattr(st.session_state, "gym_saved", False):
             date_str = datetime.datetime.now().strftime("%Y-%m-%d")
-            save_workout(str(uuid.uuid4()), date_str, "Quick Workout", st.session_state.gym_score, len(st.session_state.gym_exercises), st.session_state.gym_xp, st.session_state.gym_results)
+            save_workout(str(uuid.uuid4()), date_str, st.session_state.gym_mode, st.session_state.gym_score, len(st.session_state.gym_exercises), st.session_state.gym_xp, st.session_state.gym_results)
             st.session_state.gym_saved = True
             
         st.subheader("Workout done. Your roots go a little deeper.")
         st.markdown(f"**Score:** {st.session_state.gym_score} / {len(st.session_state.gym_exercises)}")
         st.markdown(f"**Total XP Earned:** {st.session_state.gym_xp}")
+        time_spent = int(time.time() - st.session_state.gym_start_time)
+        st.markdown(f"**Time:** {time_spent // 60}m {time_spent % 60}s")
         if st.button("Back to Gym Home", type="primary"):
             st.session_state.gym_active = False
             st.session_state.gym_saved = False
