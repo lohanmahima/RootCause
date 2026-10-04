@@ -13,11 +13,11 @@ GYM_BANK = [
         "hints": [
             "Look at the difference between numbers",
             "Each number increases by the same amount",
-            "Add 2 to the last number"
+            "Add 2 to the last number",
         ],
         "explanation": "The sequence increments by 2 each time.",
         "thinking_trick": "Always check the difference between consecutive items first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pattern_1",
@@ -33,11 +33,11 @@ GYM_BANK = [
         "hints": [
             "Look at the difference between numbers",
             "Each number increases by the same amount",
-            "Add 2 to the last number"
+            "Add 2 to the last number",
         ],
         "explanation": "The sequence increments by 2 each time.",
         "thinking_trick": "Always check the difference between consecutive items first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pattern_2",
@@ -53,11 +53,11 @@ GYM_BANK = [
         "hints": [
             "Look at the difference between numbers",
             "Each number increases by the same amount",
-            "Add 2 to the last number"
+            "Add 2 to the last number",
         ],
         "explanation": "The sequence increments by 2 each time.",
         "thinking_trick": "Always check the difference between consecutive items first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pattern_3",
@@ -73,11 +73,11 @@ GYM_BANK = [
         "hints": [
             "Look at the difference between numbers",
             "Each number increases by the same amount",
-            "Add 2 to the last number"
+            "Add 2 to the last number",
         ],
         "explanation": "The sequence increments by 2 each time.",
         "thinking_trick": "Always check the difference between consecutive items first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "trace_0",
@@ -93,11 +93,11 @@ GYM_BANK = [
         "hints": [
             "Trace the loop step by step",
             "The loop runs 3 times",
-            "Add 1 to x three times"
+            "Add 1 to x three times",
         ],
         "explanation": "The loop executes 3 times, adding 1 each time.",
         "thinking_trick": "Write down variable values on paper for each loop iteration.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "trace_1",
@@ -113,11 +113,11 @@ GYM_BANK = [
         "hints": [
             "Trace the loop step by step",
             "The loop runs 3 times",
-            "Add 1 to x three times"
+            "Add 1 to x three times",
         ],
         "explanation": "The loop executes 3 times, adding 1 each time.",
         "thinking_trick": "Write down variable values on paper for each loop iteration.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "trace_2",
@@ -133,11 +133,11 @@ GYM_BANK = [
         "hints": [
             "Trace the loop step by step",
             "The loop runs 3 times",
-            "Add 1 to x three times"
+            "Add 1 to x three times",
         ],
         "explanation": "The loop executes 3 times, adding 1 each time.",
         "thinking_trick": "Write down variable values on paper for each loop iteration.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "trace_3",
@@ -153,11 +153,11 @@ GYM_BANK = [
         "hints": [
             "Trace the loop step by step",
             "The loop runs 3 times",
-            "Add 1 to x three times"
+            "Add 1 to x three times",
         ],
         "explanation": "The loop executes 3 times, adding 1 each time.",
         "thinking_trick": "Write down variable values on paper for each loop iteration.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "predict_0",
@@ -166,18 +166,18 @@ GYM_BANK = [
         "difficulty": "easy",
         "language": "python",
         "prompt": "What does this print?",
-        "code": "print(\"hello\"[0])",
+        "code": 'print("hello"[0])',
         "options_or_steps": None,
         "answer": "h",
         "rubric": None,
         "hints": [
             "Strings are zero-indexed",
             "Find the character at index 0",
-            "Count from 0"
+            "Count from 0",
         ],
         "explanation": "Index 0 of hello is h.",
         "thinking_trick": "Remember that counting in programming starts at 0.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "predict_1",
@@ -186,18 +186,18 @@ GYM_BANK = [
         "difficulty": "easy",
         "language": "python",
         "prompt": "What does this print?",
-        "code": "print(\"hello\"[1])",
+        "code": 'print("hello"[1])',
         "options_or_steps": None,
         "answer": "e",
         "rubric": None,
         "hints": [
             "Strings are zero-indexed",
             "Find the character at index 1",
-            "Count from 0"
+            "Count from 0",
         ],
         "explanation": "Index 1 of hello is e.",
         "thinking_trick": "Remember that counting in programming starts at 0.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "predict_2",
@@ -206,18 +206,18 @@ GYM_BANK = [
         "difficulty": "easy",
         "language": "python",
         "prompt": "What does this print?",
-        "code": "print(\"hello\"[2])",
+        "code": 'print("hello"[2])',
         "options_or_steps": None,
         "answer": "l",
         "rubric": None,
         "hints": [
             "Strings are zero-indexed",
             "Find the character at index 2",
-            "Count from 0"
+            "Count from 0",
         ],
         "explanation": "Index 2 of hello is l.",
         "thinking_trick": "Remember that counting in programming starts at 0.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "predict_3",
@@ -226,18 +226,18 @@ GYM_BANK = [
         "difficulty": "easy",
         "language": "python",
         "prompt": "What does this print?",
-        "code": "print(\"hello\"[3])",
+        "code": 'print("hello"[3])',
         "options_or_steps": None,
         "answer": "l",
         "rubric": None,
         "hints": [
             "Strings are zero-indexed",
             "Find the character at index 3",
-            "Count from 0"
+            "Count from 0",
         ],
         "explanation": "Index 3 of hello is l.",
         "thinking_trick": "Remember that counting in programming starts at 0.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "bug_0",
@@ -249,19 +249,15 @@ GYM_BANK = [
         "code": "def sum_list(nums):\n    total = 0\n    for n in nums:\n        total = n\n    return total",
         "options_or_steps": None,
         "answer": "total = n",
-        "rubric": [
-            "total = n",
-            "total += n",
-            "overwrites"
-        ],
+        "rubric": ["total = n", "total += n", "overwrites"],
         "hints": [
             "Look at how total is updated",
             "Does it add to total or replace it?",
-            "It should be total += n"
+            "It should be total += n",
         ],
         "explanation": "The line total = n overwrites the sum instead of adding to it.",
         "thinking_trick": "When accumulating a value, ensure you use += instead of =.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "bug_1",
@@ -273,19 +269,15 @@ GYM_BANK = [
         "code": "def sum_list(nums):\n    total = 0\n    for n in nums:\n        total = n\n    return total",
         "options_or_steps": None,
         "answer": "total = n",
-        "rubric": [
-            "total = n",
-            "total += n",
-            "overwrites"
-        ],
+        "rubric": ["total = n", "total += n", "overwrites"],
         "hints": [
             "Look at how total is updated",
             "Does it add to total or replace it?",
-            "It should be total += n"
+            "It should be total += n",
         ],
         "explanation": "The line total = n overwrites the sum instead of adding to it.",
         "thinking_trick": "When accumulating a value, ensure you use += instead of =.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "bug_2",
@@ -297,19 +289,15 @@ GYM_BANK = [
         "code": "def sum_list(nums):\n    total = 0\n    for n in nums:\n        total = n\n    return total",
         "options_or_steps": None,
         "answer": "total = n",
-        "rubric": [
-            "total = n",
-            "total += n",
-            "overwrites"
-        ],
+        "rubric": ["total = n", "total += n", "overwrites"],
         "hints": [
             "Look at how total is updated",
             "Does it add to total or replace it?",
-            "It should be total += n"
+            "It should be total += n",
         ],
         "explanation": "The line total = n overwrites the sum instead of adding to it.",
         "thinking_trick": "When accumulating a value, ensure you use += instead of =.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "bug_3",
@@ -321,19 +309,15 @@ GYM_BANK = [
         "code": "def sum_list(nums):\n    total = 0\n    for n in nums:\n        total = n\n    return total",
         "options_or_steps": None,
         "answer": "total = n",
-        "rubric": [
-            "total = n",
-            "total += n",
-            "overwrites"
-        ],
+        "rubric": ["total = n", "total += n", "overwrites"],
         "hints": [
             "Look at how total is updated",
             "Does it add to total or replace it?",
-            "It should be total += n"
+            "It should be total += n",
         ],
         "explanation": "The line total = n overwrites the sum instead of adding to it.",
         "thinking_trick": "When accumulating a value, ensure you use += instead of =.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "order_0",
@@ -343,25 +327,17 @@ GYM_BANK = [
         "language": "none",
         "prompt": "Order the steps to swap two variables A and B using a temporary variable.",
         "code": None,
-        "options_or_steps": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
-        "answer": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
+        "options_or_steps": ["temp = A", "A = B", "B = temp"],
+        "answer": ["temp = A", "A = B", "B = temp"],
         "rubric": None,
         "hints": [
             "Save A first so it is not lost",
             "Once A is saved, overwrite A with B",
-            "Finally, give B the saved value"
+            "Finally, give B the saved value",
         ],
         "explanation": "You must store A in a temporary variable before overwriting it with B.",
         "thinking_trick": "Always secure data in a safe place before overwriting it.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "order_1",
@@ -371,25 +347,17 @@ GYM_BANK = [
         "language": "none",
         "prompt": "Order the steps to swap two variables A and B using a temporary variable.",
         "code": None,
-        "options_or_steps": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
-        "answer": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
+        "options_or_steps": ["temp = A", "A = B", "B = temp"],
+        "answer": ["temp = A", "A = B", "B = temp"],
         "rubric": None,
         "hints": [
             "Save A first so it is not lost",
             "Once A is saved, overwrite A with B",
-            "Finally, give B the saved value"
+            "Finally, give B the saved value",
         ],
         "explanation": "You must store A in a temporary variable before overwriting it with B.",
         "thinking_trick": "Always secure data in a safe place before overwriting it.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "order_2",
@@ -399,25 +367,17 @@ GYM_BANK = [
         "language": "none",
         "prompt": "Order the steps to swap two variables A and B using a temporary variable.",
         "code": None,
-        "options_or_steps": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
-        "answer": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
+        "options_or_steps": ["temp = A", "A = B", "B = temp"],
+        "answer": ["temp = A", "A = B", "B = temp"],
         "rubric": None,
         "hints": [
             "Save A first so it is not lost",
             "Once A is saved, overwrite A with B",
-            "Finally, give B the saved value"
+            "Finally, give B the saved value",
         ],
         "explanation": "You must store A in a temporary variable before overwriting it with B.",
         "thinking_trick": "Always secure data in a safe place before overwriting it.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "order_3",
@@ -427,25 +387,17 @@ GYM_BANK = [
         "language": "none",
         "prompt": "Order the steps to swap two variables A and B using a temporary variable.",
         "code": None,
-        "options_or_steps": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
-        "answer": [
-            "temp = A",
-            "A = B",
-            "B = temp"
-        ],
+        "options_or_steps": ["temp = A", "A = B", "B = temp"],
+        "answer": ["temp = A", "A = B", "B = temp"],
         "rubric": None,
         "hints": [
             "Save A first so it is not lost",
             "Once A is saved, overwrite A with B",
-            "Finally, give B the saved value"
+            "Finally, give B the saved value",
         ],
         "explanation": "You must store A in a temporary variable before overwriting it with B.",
         "thinking_trick": "Always secure data in a safe place before overwriting it.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "edge_0",
@@ -457,20 +409,15 @@ GYM_BANK = [
         "code": "def get_max(nums):\n    m = 0\n    for n in nums:\n        if n > m:\n            m = n\n    return m",
         "options_or_steps": None,
         "answer": "Empty list",
-        "rubric": [
-            "empty",
-            "[]",
-            "no elements",
-            "zero elements"
-        ],
+        "rubric": ["empty", "[]", "no elements", "zero elements"],
         "hints": [
             "What if the list has nothing in it?",
             "Think about length 0",
-            "An empty list will return 0, which might not be correct"
+            "An empty list will return 0, which might not be correct",
         ],
         "explanation": "An empty list is a common edge case.",
         "thinking_trick": "Always check the empty or zero-length case first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "edge_1",
@@ -482,20 +429,15 @@ GYM_BANK = [
         "code": "def get_max(nums):\n    m = 0\n    for n in nums:\n        if n > m:\n            m = n\n    return m",
         "options_or_steps": None,
         "answer": "Empty list",
-        "rubric": [
-            "empty",
-            "[]",
-            "no elements",
-            "zero elements"
-        ],
+        "rubric": ["empty", "[]", "no elements", "zero elements"],
         "hints": [
             "What if the list has nothing in it?",
             "Think about length 0",
-            "An empty list will return 0, which might not be correct"
+            "An empty list will return 0, which might not be correct",
         ],
         "explanation": "An empty list is a common edge case.",
         "thinking_trick": "Always check the empty or zero-length case first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "edge_2",
@@ -507,20 +449,15 @@ GYM_BANK = [
         "code": "def get_max(nums):\n    m = 0\n    for n in nums:\n        if n > m:\n            m = n\n    return m",
         "options_or_steps": None,
         "answer": "Empty list",
-        "rubric": [
-            "empty",
-            "[]",
-            "no elements",
-            "zero elements"
-        ],
+        "rubric": ["empty", "[]", "no elements", "zero elements"],
         "hints": [
             "What if the list has nothing in it?",
             "Think about length 0",
-            "An empty list will return 0, which might not be correct"
+            "An empty list will return 0, which might not be correct",
         ],
         "explanation": "An empty list is a common edge case.",
         "thinking_trick": "Always check the empty or zero-length case first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "edge_3",
@@ -532,20 +469,15 @@ GYM_BANK = [
         "code": "def get_max(nums):\n    m = 0\n    for n in nums:\n        if n > m:\n            m = n\n    return m",
         "options_or_steps": None,
         "answer": "Empty list",
-        "rubric": [
-            "empty",
-            "[]",
-            "no elements",
-            "zero elements"
-        ],
+        "rubric": ["empty", "[]", "no elements", "zero elements"],
         "hints": [
             "What if the list has nothing in it?",
             "Think about length 0",
-            "An empty list will return 0, which might not be correct"
+            "An empty list will return 0, which might not be correct",
         ],
         "explanation": "An empty list is a common edge case.",
         "thinking_trick": "Always check the empty or zero-length case first.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pseudo_0",
@@ -557,21 +489,15 @@ GYM_BANK = [
         "code": None,
         "options_or_steps": None,
         "answer": "for i from 1 to 10:\n  if i % 2 == 0:\n    print i",
-        "rubric": [
-            "loop",
-            "1 to 10",
-            "even",
-            "mod 2",
-            "print"
-        ],
+        "rubric": ["loop", "1 to 10", "even", "mod 2", "print"],
         "hints": [
             "You need a loop from 1 to 10",
             "Inside the loop, check if the number is even",
-            "Use the modulo operator %"
+            "Use the modulo operator %",
         ],
         "explanation": "A loop goes through each number, and a condition checks if it is divisible by 2.",
         "thinking_trick": "Break down sentences: all numbers from x to y = loop, even = condition.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pseudo_1",
@@ -583,21 +509,15 @@ GYM_BANK = [
         "code": None,
         "options_or_steps": None,
         "answer": "for i from 1 to 10:\n  if i % 2 == 0:\n    print i",
-        "rubric": [
-            "loop",
-            "1 to 10",
-            "even",
-            "mod 2",
-            "print"
-        ],
+        "rubric": ["loop", "1 to 10", "even", "mod 2", "print"],
         "hints": [
             "You need a loop from 1 to 10",
             "Inside the loop, check if the number is even",
-            "Use the modulo operator %"
+            "Use the modulo operator %",
         ],
         "explanation": "A loop goes through each number, and a condition checks if it is divisible by 2.",
         "thinking_trick": "Break down sentences: all numbers from x to y = loop, even = condition.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pseudo_2",
@@ -609,21 +529,15 @@ GYM_BANK = [
         "code": None,
         "options_or_steps": None,
         "answer": "for i from 1 to 10:\n  if i % 2 == 0:\n    print i",
-        "rubric": [
-            "loop",
-            "1 to 10",
-            "even",
-            "mod 2",
-            "print"
-        ],
+        "rubric": ["loop", "1 to 10", "even", "mod 2", "print"],
         "hints": [
             "You need a loop from 1 to 10",
             "Inside the loop, check if the number is even",
-            "Use the modulo operator %"
+            "Use the modulo operator %",
         ],
         "explanation": "A loop goes through each number, and a condition checks if it is divisible by 2.",
         "thinking_trick": "Break down sentences: all numbers from x to y = loop, even = condition.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "pseudo_3",
@@ -635,21 +549,15 @@ GYM_BANK = [
         "code": None,
         "options_or_steps": None,
         "answer": "for i from 1 to 10:\n  if i % 2 == 0:\n    print i",
-        "rubric": [
-            "loop",
-            "1 to 10",
-            "even",
-            "mod 2",
-            "print"
-        ],
+        "rubric": ["loop", "1 to 10", "even", "mod 2", "print"],
         "hints": [
             "You need a loop from 1 to 10",
             "Inside the loop, check if the number is even",
-            "Use the modulo operator %"
+            "Use the modulo operator %",
         ],
         "explanation": "A loop goes through each number, and a condition checks if it is divisible by 2.",
         "thinking_trick": "Break down sentences: all numbers from x to y = loop, even = condition.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "brute_0",
@@ -661,21 +569,15 @@ GYM_BANK = [
         "code": None,
         "options_or_steps": None,
         "answer": "Use a hash set",
-        "rubric": [
-            "hash",
-            "set",
-            "dictionary",
-            "O(1) lookup",
-            "O(N)"
-        ],
+        "rubric": ["hash", "set", "dictionary", "O(1) lookup", "O(N)"],
         "hints": [
             "Can we look up elements faster than scanning the whole array?",
             "What data structure gives O(1) lookups?",
-            "Convert one array to a Set"
+            "Convert one array to a Set",
         ],
         "explanation": "By putting one array into a hash set, you can check if elements of the second array exist in O(1) time.",
         "thinking_trick": "When you need fast lookups, always think of Hash Sets or Dictionaries.",
-        "source": "bank"
+        "source": "bank",
     },
     {
         "id": "brute_1",
@@ -687,20 +589,14 @@ GYM_BANK = [
         "code": None,
         "options_or_steps": None,
         "answer": "Use a hash set",
-        "rubric": [
-            "hash",
-            "set",
-            "dictionary",
-            "O(1) lookup",
-            "O(N)"
-        ],
+        "rubric": ["hash", "set", "dictionary", "O(1) lookup", "O(N)"],
         "hints": [
             "Can we look up elements faster than scanning the whole array?",
             "What data structure gives O(1) lookups?",
-            "Convert one array to a Set"
+            "Convert one array to a Set",
         ],
         "explanation": "By putting one array into a hash set, you can check if elements of the second array exist in O(1) time.",
         "thinking_trick": "When you need fast lookups, always think of Hash Sets or Dictionaries.",
-        "source": "bank"
-    }
+        "source": "bank",
+    },
 ]

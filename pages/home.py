@@ -5,7 +5,8 @@ load_css()
 render_navbar()
 
 # Hero Section
-st.markdown("""
+st.markdown(
+    """
 <div style="text-align: center; margin: 4rem 0;">
     <h1 style="font-size: clamp(2.6rem, 6vw, 4.5rem) !important; margin-bottom: 0.5rem; font-family: 'Fraunces', serif; font-weight: 500; color: var(--cream);">
         Don't rely on AI.<br>Use AI to learn how to <i style="color: var(--ember); font-style: italic;">think</i>.
@@ -14,10 +15,13 @@ st.markdown("""
         RootCause doesn't hand you the answer. It finds out why you got stuck, and guides you back to the path, one step at a time.
     </p>
 </div>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 # Buttons
-st.markdown("""
+st.markdown(
+    """
 <style>
 .hero-buttons {
     display: flex;
@@ -26,7 +30,9 @@ st.markdown("""
     margin-bottom: 4rem;
 }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 col1, col2, col3, col4 = st.columns([1, 1.5, 1.5, 1])
 with col2:
@@ -57,11 +63,20 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.subheader("Why RootCause")
 wr_col1, wr_col2, wr_col3 = st.columns(3)
 with wr_col1:
-    card("Finds WHY you're stuck", "Identifies if it's a logic, concept, or edge-case gap.")
+    card(
+        "Finds WHY you're stuck",
+        "Identifies if it's a logic, concept, or edge-case gap.",
+    )
 with wr_col2:
-    card("Never gives the answer", "Builds your coding muscles instead of doing the work for you.")
+    card(
+        "Never gives the answer",
+        "Builds your coding muscles instead of doing the work for you.",
+    )
 with wr_col3:
-    card("Remembers weak spots", "Tracks your progress so you can practice what you're bad at.")
+    card(
+        "Remembers weak spots",
+        "Tracks your progress so you can practice what you're bad at.",
+    )
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -83,13 +98,16 @@ with stat_col3:
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Why open source strip
-st.markdown("""
+st.markdown(
+    """
 <div class="rc-card" style="text-align: center; margin-top: 2rem;">
     <h3 style="color: var(--mist); margin-top: 0;">Built on Open Source</h3>
     <p style="color: var(--parchment); font-size: 1.1rem; margin-bottom: 0;">
-        100% Private &middot; Offline Capable &middot; Free &middot; Powered by swappable local models like Gemma and LLaMA via Ollama.
+        100% Private &middot; Offline Capable &middot; Free &middot; Powered by swappable local models like Gemma and  via Ollama.
     </p>
 </div>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 render_footer()
