@@ -1,3 +1,12 @@
 venv/
 __pycache__/
-*.py[cod]
+*.pyc
+.env
+*.db
+*.sqlite
+.streamlit/secrets.toml
+.DS_Store
+.idea/
+.vscode/
+logs/
+exports/
