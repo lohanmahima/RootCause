@@ -2,6 +2,51 @@ import ast
 import subprocess
 import tempfile
 import os
+import json
+try:
+    import ollama
+except ImportError:
+    ollama = None
+from pydantic import BaseModel
+
+class GymJudgment(BaseModel):
+    met: list[str]
+    missed: list[str]
+    feedback: str
+    thinking_trick: str
+
+def judge_free_text(exercise, user_answer):
+    if not ollama:
+        return None
+    system_prompt = f"""You are a strict but fair coding mentor.
+The user is doing an exercise of type {exercise.get("type")}.
+Topic: {exercise.get("topic")}.
+Prompt: {exercise.get("prompt")}
+Expected answer ideas / rubric: {exercise.get("rubric") or exercise.get("answer")}
+
+Evaluate their answer against the expected ideas.
+Return JSON with:
+- met: list of rubric points they hit (strings)
+- missed: list of rubric points they missed (strings)
+- feedback: short encouraging feedback. DO NOT give the full solution.
+- thinking_trick: a one-sentence reusable mental habit."""
+
+    try:
+        MODEL = os.getenv("ROOTCAUSE_MODEL", "gemma3:12b")
+        resp = ollama.chat(
+            model=MODEL,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"My answer: {user_answer}"}
+            ],
+            format=GymJudgment.model_json_schema(),
+            options={"temperature": 0.2},
+        )
+        return json.loads(resp["message"]["content"])
+    except Exception as e:
+        print(f"Gym judgment failed: {e}")
+        return None
+
 
 def is_safe_code(code: str) -> bool:
     """Check AST for disallowed operations like imports or file access."""
@@ -110,3 +155,18 @@ def verify_exercise_output(exercise):
         return True
     
     return True
+
+def check_answer_advanced(exercise, user_answer):
+    res = check_answer(exercise, user_answer)
+    ex_type = exercise["type"]
+    
+    if ex_type in ["pseudo", "edge", "brute", "bug"]:
+        judgment = judge_free_text(exercise, user_answer)
+        if judgment:
+            # If they missed nothing major, call it correct
+            is_correct = len(judgment.get("missed", [])) == 0
+            # If our simple check says true, trust it too
+            is_correct = is_correct or res
+            return is_correct, judgment
+            
+    return res, None
