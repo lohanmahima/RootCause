@@ -3,6 +3,9 @@ import datetime
 from pathlib import Path
 
 DB_PATH = Path("gym.db")
+from core.gym import init_db
+if not DB_PATH.exists():
+    init_db()
 
 LEVELS = [
     (0, "Seedling"), (100, "Sprout"), (300, "Rooted"), 
