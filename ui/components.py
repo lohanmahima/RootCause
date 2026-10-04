@@ -9,25 +9,48 @@ def render_navbar():
     """Render the top navbar using columns and page links."""
     st.markdown("""
         <style>
-        .nav-logo {
-            font-weight: 800;
+                .nav-logo {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
             font-size: 1.5rem;
-            color: white;
-            background: linear-gradient(90deg, #d8b4fe 0%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--cream);
             margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .status-pill {
-            background: rgba(0, 255, 0, 0.1);
-            color: #4ade80;
+        .nav-logo svg {
+            fill: var(--ember);
+            width: 16px;
+            height: 16px;
+        }
+                .status-pill {
+            background: rgba(138, 132, 80, 0.15);
+            color: var(--moss);
             padding: 4px 10px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: bold;
+            font-weight: 500;
             display: inline-block;
             margin-top: 10px;
         }
+        /* Style for st.page_link to have ember underline when active (mock via hover/default for now since Streamlit active state is hard to target precisely without JS, but we can style the anchor) */
+        a[data-testid="stPageLink-NavLink"] {
+            border-radius: 0 !important;
+            background: transparent !important;
+        }
+        /* We can just remove the grey background on hover/active */
+        a[data-testid="stPageLink-NavLink"]:hover,
+        a[data-testid="stPageLink-NavLink"]:active,
+        a[data-testid="stPageLink-NavLink"]:focus {
+            background: transparent !important;
+        }
+        /* To add the underline on the active page, Streamlit adds aria-current="page" to the active a tag */
+        a[data-testid="stPageLink-NavLink"][aria-current="page"] {
+            border-bottom: 2px solid var(--ember) !important;
+            padding-bottom: 2px !important;
+        }
+
         hr.nav-divider {
             margin-top: 0.5rem;
             margin-bottom: 2rem;

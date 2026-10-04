@@ -7,20 +7,33 @@ render_navbar()
 # Hero Section
 st.markdown("""
 <div style="text-align: center; margin: 4rem 0;">
-    <h1 style="font-size: 3.5rem !important; margin-bottom: 0.5rem;">Don't rely on AI.<br>Use AI to learn how to think.</h1>
-    <p style="font-size: 1.2rem; color: #aaa; max-width: 600px; margin: 0 auto 2rem auto;">
-        RootCause doesn't just give you the answer. It finds out <i>why</i> you're stuck, 
-        diagnoses your specific knowledge gap, and guides you to the solution through Socratic reasoning.
+    <h1 style="font-size: clamp(2.6rem, 6vw, 4.5rem) !important; margin-bottom: 0.5rem; font-family: 'Fraunces', serif; font-weight: 500; color: var(--cream);">
+        Don't rely on AI.<br>Use AI to learn how to <i style="color: var(--ember); font-style: italic;">think</i>.
+    </h1>
+    <p style="font-size: 1.2rem; color: var(--parchment); max-width: 600px; margin: 0 auto 2rem auto;">
+        RootCause doesn't hand you the answer. It finds out why you got stuck, and guides you back to the path, one step at a time.
     </p>
 </div>
 """, unsafe_allow_html=True)
 
-col1, col2, col3, col4 = st.columns([1, 2, 2, 1])
+# Buttons
+st.markdown("""
+<style>
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+</style>
+""", unsafe_allow_html=True)
+
+col1, col2, col3, col4 = st.columns([1, 1.5, 1.5, 1])
 with col2:
-    if st.button("🚀 Start Solving →", type="primary", use_container_width=True):
+    if st.button("Start solving", type="primary", use_container_width=True):
         st.switch_page("pages/solve.py")
 with col3:
-    if st.button("🧩 Try a Sample Problem", use_container_width=True):
+    if st.button("Try a sample problem", use_container_width=True):
         st.session_state["load_sample"] = True
         st.switch_page("pages/solve.py")
 
@@ -44,11 +57,11 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.subheader("Why RootCause")
 wr_col1, wr_col2, wr_col3 = st.columns(3)
 with wr_col1:
-    card("🔍 Finds WHY you're stuck", "Identifies if it's a logic, concept, or edge-case gap.")
+    card("Finds WHY you're stuck", "Identifies if it's a logic, concept, or edge-case gap.")
 with wr_col2:
-    card("🚫 Never gives the answer", "Builds your coding muscles instead of doing the work for you.")
+    card("Never gives the answer", "Builds your coding muscles instead of doing the work for you.")
 with wr_col3:
-    card("🧠 Remembers weak spots", "Tracks your progress so you can practice what you're bad at.")
+    card("Remembers weak spots", "Tracks your progress so you can practice what you're bad at.")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
@@ -63,7 +76,7 @@ stat_col1, stat_col2, stat_col3 = st.columns(3)
 with stat_col1:
     stat_tile("Sessions Done", str(sessions_done))
 with stat_col2:
-    stat_tile("Day Streak", f"{streak} 🔥")
+    stat_tile("Day Streak", str(streak))
 with stat_col3:
     stat_tile("Top Weak Spot", top_weak_spot)
 
@@ -71,9 +84,9 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 # Why open source strip
 st.markdown("""
-<div style="background: rgba(192, 132, 252, 0.1); border: 1px solid rgba(192, 132, 252, 0.3); border-radius: 12px; padding: 2rem; text-align: center; margin-top: 2rem;">
-    <h3 style="color: #d8b4fe; margin-top: 0;">Built on Open Source</h3>
-    <p style="color: #ddd; font-size: 1.1rem; margin-bottom: 0;">
+<div class="rc-card" style="text-align: center; margin-top: 2rem;">
+    <h3 style="color: var(--mist); margin-top: 0;">Built on Open Source</h3>
+    <p style="color: var(--parchment); font-size: 1.1rem; margin-bottom: 0;">
         100% Private &middot; Offline Capable &middot; Free &middot; Powered by swappable local models like Gemma and LLaMA via Ollama.
     </p>
 </div>
