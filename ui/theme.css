@@ -23,7 +23,7 @@ header[data-testid="stHeader"] { display: none; }
 .stApp {
     background-image: 
         linear-gradient(180deg, rgba(14,19,25,0.80) 0%, rgba(14,19,25,0.62) 55%, rgba(14,19,25,0.72) 100%),
-        url("app/static/bg.jpg") !important;
+        url("/app/static/bg.jpg") !important;
     background-size: cover !important;
     background-position: center bottom !important;
     background-attachment: fixed !important;
