@@ -1,98 +1,103 @@
-/* Global CSS for RootCause Website Feel */
 
 /* Hide default sidebar to use our custom top navbar */
-[data-testid="collapsedControl"] {
-    display: none;
-}
-[data-testid="stSidebar"] {
-    display: none;
+[data-testid="collapsedControl"] { display: none; }
+[data-testid="stSidebar"] { display: none; }
+header[data-testid="stHeader"] { display: none; }
+
+/* Premium Watercolor Theme */
+:root {
+  --ink: #0E1319;
+  --slate: #1B2430;
+  --mist: #8FA3B5;
+  --mist-deep: #5F7487;
+  --cream: #F3EBDD;
+  --parchment: #E3D5BD;
+  --ember: #C8622B;
+  --ember-soft: #E08A52;
+  --moss: #8A8450;
+  --forest: #2F3A2E;
+  --clay: #B4513D;
 }
 
-/* Hide header */
-header[data-testid="stHeader"] {
-    display: none;
+/* Full page background using the image with ink overlay */
+.stApp {
+    background-image: 
+        linear-gradient(180deg, rgba(14,19,25,0.80) 0%, rgba(14,19,25,0.62) 55%, rgba(14,19,25,0.72) 100%),
+        url("app/static/bg.jpg") !important;
+    background-size: cover !important;
+    background-position: center bottom !important;
+    background-attachment: fixed !important;
+    background-color: transparent !important;
 }
 
-/* Top padding adjustment */
-.block-container {
-    padding-top: 2rem !important;
-    max-width: 1000px !important;
-}
-
-/* Base text */
+/* Typography fallbacks since local woff2 not strictly guaranteed if python failed */
 h1, h2, h3 {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em !important;
+    font-family: "Fraunces", Georgia, serif !important;
+    color: var(--cream) !important;
+    font-weight: 500 !important;
 }
 
 h1 {
-    font-size: 3rem !important;
-    background: linear-gradient(90deg, #d8b4fe 0%, #c084fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: clamp(2.6rem, 6vw, 4.5rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
 }
 
-/* Buttons */
-.stButton > button {
-    border-radius: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    transition: all 0.2s ease !important;
-    color: white !important;
-    font-weight: 600 !important;
+p, span, div {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--cream);
 }
 
-.stButton > button:hover {
-    border-color: #c084fc !important;
-    background-color: rgba(192, 132, 252, 0.1) !important;
-    box-shadow: 0 0 15px rgba(192, 132, 252, 0.3) !important;
-    transform: translateY(-1px) !important;
+.block-container {
+    max-width: 1100px !important;
+    padding-top: 2rem !important;
 }
 
-/* Primary Button Override */
-.stButton > button[kind="primary"] {
-    background: linear-gradient(90deg, #d8b4fe 0%, #c084fc 100%) !important;
-    color: #000 !important;
-    border: none !important;
-}
-.stButton > button[kind="primary"]:hover {
-    box-shadow: 0 0 20px rgba(192, 132, 252, 0.5) !important;
-    color: #fff !important;
-}
-
-/* Custom HTML components */
+/* Cards */
 .rc-card {
-    background: rgba(30, 30, 40, 0.8);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 1.5rem;
+    background: rgba(27,36,48,0.62);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(243,235,221,0.14);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
     margin-bottom: 1rem;
 }
-.rc-badge {
-    background: rgba(192, 132, 252, 0.2);
-    color: #d8b4fe;
-    padding: 0.2rem 0.6rem;
-    border-radius: 99px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    display: inline-block;
+
+/* Primary button */
+.stButton > button[kind="primary"] {
+    background: linear-gradient(180deg, var(--ember-soft) 0%, var(--ember) 100%) !important;
+    color: var(--cream) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 12px 26px !important;
+    font-weight: 500 !important;
 }
-.rc-stat {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.stButton > button[kind="primary"]:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 0 15px rgba(200, 98, 43, 0.4) !important;
 }
-.rc-stat-value {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #d8b4fe;
+
+/* Secondary Button */
+.stButton > button {
+    background: transparent !important;
+    color: var(--cream) !important;
+    border: 1px solid rgba(243,235,221,0.35) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
 }
-.rc-stat-label {
-    font-size: 0.9rem;
-    color: #aaa;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+.stButton > button:hover {
+    background: rgba(243,235,221,0.08) !important;
+}
+
+/* Text areas and inputs */
+.stTextArea textarea, .stTextInput input {
+    background: rgba(14,19,25,0.55) !important;
+    border: 1px solid rgba(243,235,221,0.18) !important;
+    border-radius: 12px !important;
+    color: var(--cream) !important;
+}
+.stTextArea textarea:focus, .stTextInput input:focus {
+    border-color: var(--ember) !important;
+    box-shadow: 0 0 0 3px rgba(200, 98, 43, 0.25) !important;
 }

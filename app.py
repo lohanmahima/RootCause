@@ -1,11 +1,9 @@
 import streamlit as st
-from core.ink_garden import inject_ink_garden
 
 # App entry point config
 st.set_page_config(page_title="RootCause", page_icon="🧠", layout="centered")
 
 # Inject the visual background effect
-inject_ink_garden()
 
 # Define multi-page routing
 pages = [
