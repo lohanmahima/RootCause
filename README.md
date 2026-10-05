@@ -9,7 +9,7 @@ I built this for a friend, Ojju, who was learning to code but kept getting stuck
 
 ## Live Demo
 You can access the live version of this application here:
-?? **[Live Demo on Hugging Face Spaces](https://huggingface.co/spaces)** *(Note: Initial startup may take 2-3 minutes as the local LLM loads into memory).*
+?? **[Live Demo](https://tidy-walls-smile.loca.lt)** *(Note: Initial startup may show a security warning. Click "Continue" to proceed. This URL requires the host laptop to be online).*
 
 ## Screenshots
 
