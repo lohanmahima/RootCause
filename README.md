@@ -7,9 +7,6 @@ I built this for a friend, Ojju, who was learning to code but kept getting stuck
 [TODO: one real thing Ojju said after trying it]
 
 
-## Live Demo
-You can access the live version of this application here:
-?? **[Live Demo](https://cold-guests-wonder.loca.lt)** *(Note: Initial startup may show a security warning. Click "Continue" to proceed. This URL requires the host laptop to be online).*
 
 ## Screenshots
 
