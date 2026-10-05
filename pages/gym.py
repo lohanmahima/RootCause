@@ -216,6 +216,9 @@ if not st.session_state.gym_active:
     else:
         st.info("Do a few Solve sessions first, and I'll learn where to train you.")
 else:
+    if "gym_idx" not in st.session_state or "gym_exercises" not in st.session_state:
+        st.session_state.gym_active = False
+        st.rerun()
     if st.session_state.gym_idx >= len(st.session_state.gym_exercises):
         # Save workout logic
         if not getattr(st.session_state, "gym_saved", False):

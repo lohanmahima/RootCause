@@ -62,7 +62,10 @@ def render_navbar():
     cols = st.columns([2.5, 1, 1, 1.2, 1, 1.5, 1.5])
 
     with cols[0]:
-        st.markdown('<div class="nav-logo">🧠 RootCause</div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="nav-logo"><svg viewBox="0 0 16 16"><path d="M8 0L16 8L8 16L0 8L8 0Z"/></svg>RootCause</div>',
+            unsafe_allow_html=True,
+        )
     with cols[1]:
         st.page_link("pages/home.py", label="Home")
     with cols[2]:
@@ -80,7 +83,7 @@ def render_navbar():
     with cols[6]:
         # Mocking the ready status. Could add a check to Ollama later.
         st.markdown(
-            '<div class="status-pill">🟢 Model ready</div>', unsafe_allow_html=True
+            '<div class="status-pill">Model ready</div>', unsafe_allow_html=True
         )
 
     st.markdown('<hr class="nav-divider">', unsafe_allow_html=True)
