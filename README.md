@@ -6,7 +6,13 @@ I built this for a friend, Ojju, who was learning to code but kept getting stuck
 
 [TODO: one real thing Ojju said after trying it]
 
+
+## Live Demo
+You can access the live version of this application here:
+?? **[Live Demo on Hugging Face Spaces](https://huggingface.co/spaces)** *(Note: Initial startup may take 2-3 minutes as the local LLM loads into memory).*
+
 ## Screenshots
+
 
 ![Home](docs/screenshots/home.png)
 ![Solve](docs/screenshots/solve.png)
