@@ -20,19 +20,14 @@ st.markdown(
 )
 
 # Buttons
-st.markdown(
-    """
-<style>
+st.html("""<style>
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 4rem;
 }
-</style>
-""",
-    unsafe_allow_html=True,
-)
+</style>""")
 
 col1, col2, col3, col4 = st.columns([1, 1.5, 1.5, 1])
 with col2:

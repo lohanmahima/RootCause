@@ -4,14 +4,12 @@ import streamlit as st
 def load_css():
     """Load the global CSS."""
     with open("ui/theme.css") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+        st.html(f"<style>{f.read()}</style>")
 
 
 def render_navbar():
     """Render the top navbar using columns and page links."""
-    st.markdown(
-        """
-        <style>
+    st.html("""<style>
                 .nav-logo {
             font-family: "Fraunces", serif;
             font-weight: 500;
@@ -59,10 +57,7 @@ def render_navbar():
             margin-bottom: 2rem;
             border-color: rgba(255,255,255,0.1);
         }
-        </style>
-    """,
-        unsafe_allow_html=True,
-    )
+        </style>""")
 
     cols = st.columns([2.5, 1, 1, 1.2, 1, 1.5, 1.5])
 
